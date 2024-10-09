@@ -2,22 +2,23 @@
 import {movies} from "./movies"; /* import movie database  */
 console.log(movies);
 /* searchbar */
-type movie = [string, string, string, string, string, string [], string]
+type movie = [string, string, string, string, string[], string][];
 
 
 const moviesearchInput = document.querySelector('#movieSearchInput') as HTMLInputElement;
 const searchBtn = document.querySelector('#searchBtn') as HTMLInputElement;
 const yearUp = document.querySelector('#yearUp') as HTMLInputElement;
 const yearDown = document.querySelector('#yearDown') as HTMLInputElement;
-const bestRate = document.querySelector('#searchBtn') as HTMLInputElement;
+const bestRate = document.querySelector('#bestRate') as HTMLInputElement;
+const moviecardContent = document.querySelector(".moviecardContent") as HTMLInputElement; /* using class for a fun change  */
 
 /* movie card content */
-const movieTitle = document.querySelector('#movieTitle') as HTMLElement;
+/* const movieTitle = document.querySelector('#movieTitle') as HTMLElement;
 const releaseYear = document.querySelector('#releaseYear') as HTMLElement;
 const director = document.querySelector('#director') as HTMLElement;
 const movieLength = document.querySelector('#movieLength') as HTMLElement;
 const genre = document.querySelector('#genre') as HTMLElement;
-const rating = document.querySelector('#rating') as HTMLElement;
+const rating = document.querySelector('#rating') as HTMLElement; */
 
 console.log(moviesearchInput);
 console.log(searchBtn);
@@ -25,12 +26,12 @@ console.log(yearUp);
 console.log(yearDown);
 console.log(bestRate);
 
-console.log(movieTitle);
+/* console.log(movieTitle);
 console.log(releaseYear);
 console.log(director);
 console.log(movieLength);
 console.log(genre);
-console.log(rating);
+console.log(rating); */
 
 // elvis operator --> ? checking truthy or falsy 
 searchBtn?.addEventListener('click', () => {
@@ -38,13 +39,95 @@ searchBtn?.addEventListener('click', () => {
     
     const searchValue = moviesearchInput?.value;
 
-console.log(searchValue);
-})
+console.log(searchValue); /* input and search btn responding */
+});
 
-/* const moviecardContent =  */
+        /* ***** YEAR UP BUTTON ***** */ 
 
-/* const moviecardRender = (array: string[]) => {
-     
-    movieTitle.innerHTML = `` 
-}*/
+if(yearUp){
+    /* console.log("up button works"); */
 
+    yearUp.addEventListener("click", () => {
+        console.log("up button works");
+
+        movies.forEach((movie) => {
+            /* output via ts in html, with variables and template literals (backticks) */
+            const moviecardDetails = `<div>
+            <h3>${movie[0]}</h3>
+            <p>${movie[1]}</p> 
+            <h4>${movie[2]}</h4>
+            <p>${movie[3]}</p>
+            <p>${movie[4]}</p>
+            <h6>${movie[5]}</h6>
+            </div>`; 
+
+            moviecardContent.innerHTML += moviecardDetails; /* inserting data into html, += to prevent overwriting our output in html*/
+        });
+
+        /* a and b are the elements in the array */
+        const sortedMoviesAsc = movies.sort((a, b) => {
+            return a[1] - b[1];
+        });
+        console.log(sortedMoviesAsc);
+        
+    });
+    
+};
+
+                 /* ***** YEAR DOWN BUTTON ***** */ 
+if(yearDown){
+    yearDown.addEventListener("click", () => {
+        console.log("down button works");
+
+        movies.forEach((movie) => {
+
+            const moviecardDetails = `<div>
+            <h3>${movie[0]}</h3>
+            <p>${movie[1]}</p> 
+            <h4>${movie[2]}</h4>
+            <p>${movie[3]}</p>
+            <p>${movie[4]}</p>
+            <h6>${movie[5]}</h6>
+            </div>`; 
+
+            moviecardContent.innerHTML += moviecardDetails; /* inserting data into html*/
+        });
+        
+        const sortedMoviesDesc = movies.sort((a, b) => {
+            return b[1] - a[1];
+        })
+        console.log(sortedMoviesDesc); /* console returns sorted descending  */
+        
+    });
+};
+
+                      /* ***** RATE BUTTON ***** */  
+
+ if(bestRate){
+    bestRate.addEventListener("click", () => {
+        console.log("best rate btn works");
+        movies.forEach((movie) => {
+            /* output via ts in html, with variables and template literals (backticks) */
+            const moviecardDetails = `<div>
+            <h3>${movie[0]}</h3>
+            <p>${movie[1]}</p> 
+            <h4>${movie[2]}</h4>
+            <p>${movie[3]}</p>
+            <p>${movie[4]}</p>
+            <h6>${movie[5]}</h6>
+            </div>`; 
+
+            moviecardContent.innerHTML += moviecardDetails; /* inserting data into html*/
+        });
+        
+        const bestRatedMoviesDesc = movies.sort((a, b) => {
+            return b[5] - a[5];
+        })
+        console.log(bestRatedMoviesDesc); /* console returns sorted descending rating */
+        
+        
+    })
+ }                     
+
+
+ /* #7c8aff,#3c4fe0 */
