@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2{
+    color: teal;
+    text-align: center;
+    margin: 3% 0;
+}
+
+
+.input-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+    gap: 2%;
+}
+
+
+.movieCard-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.moviecard{
+    padding: 10px;
+    background-color: lightseagreen;
+    border-radius: 5px;
+    padding: 5px;
+    width: 25%;
+}

@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./movies4u.css">
     <title>Project-TS Movies for you</title>
 </head>
 <body>
-    <h1>Project-TS Movies for you</h1>
+    <h1>Movies for you</h1>
+    <h2>The best Movies DB</h2>
+    <form class="searchbar" onsubmit="return false">
+        <div class="input-wrapper">
+            <input type="text" name="moviesearch" id="movieSearchInput">
+            <input type="button" value="search" id="searchBtn">
+        </div>
+        <div class="input-wrapper">
+            <input type="button" value="YEAR UP" id="yearUp">
+            <input type="button" value="YEAR DOWN" id="yearDown">
+            <input type="button" value="BEST RATE" id="bestRate">
+        </div>
+    </form>
+    <section class="movieCard-wrapper">
+        <article class="moviecard">
+            <h3 id="movieTitle">title</h3>
+            <p id="releaseYear">year</p>
+            <h4 id="director">direc</h4>
+            <p id="movieLength">243</p>
+            <p id="genre">drama</p>
+            <p id="rating">5.5</p>
+        </article>
+    </section>
     <script type="module" src="./movies4u.ts"></script>
 </body>
 </html>
