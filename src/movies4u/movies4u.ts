@@ -42,6 +42,28 @@ searchBtn?.addEventListener('click', () => {
 console.log(searchValue); /* input and search btn responding */
 });
 
+/* copy2try */
+/* tried some stuff... would like to talk about the correct way */
+
+/* searchBtn?.addEventListener('click', () => {
+    
+    const searchValue = moviesearchInput?.value;
+
+console.log(searchValue); 
+
+if(searchValue){
+    const searchResults = movies.filter(movie => {
+        const searchedTitle = movie[0];
+        return searchedTitle.includes(searchValue);
+    })
+    if (searchResults.length > 0) {      
+        moviecardDetails(searchResults)
+    }
+}
+}); */
+
+
+
         /* ***** YEAR UP BUTTON ***** */ 
 
 if(yearUp){
@@ -130,4 +152,3 @@ if(yearDown){
  }                     
 
 
- /* #7c8aff,#3c4fe0 */
