@@ -16,12 +16,25 @@ h1, h2{
     text-align: center;
     margin: 3% 0;
 }
+h3{
+    color: sandybrown;
+    font-size: 1.4rem;
+    margin-bottom: 3%;
+}
+h4,p{
+    color: lightgoldenrodyellow;
+}
 
-
+#movieSearchInput{
+    border: 1.5px solid teal;
+    border-radius: 8px;
+    padding: 0 2%;
+    background-color: rgb(252, 246, 237);
+}
 .input-wrapper{
     display: flex;
     justify-content: center;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     gap: 2%;
 }
 
@@ -31,19 +44,21 @@ h1, h2{
     justify-content: center;
 }
 
-.moviecardContent{
+/* .moviecardContent */
+.moviecard{
     padding: 10px;
+    margin: 2% auto;
     background-color: lightseagreen;
     border-radius: 5px;
     border: 2px solid salmon;
-    padding: 10px;
-    width: 33%;
+    padding: 2% 10px;
+    width: 55%;
+    text-align: center;
 }
 
 h6{
     color: sandybrown;
     font-size: 1rem;
-    text-align: justify;
     padding: 4px;
 }
 

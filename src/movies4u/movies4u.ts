@@ -66,35 +66,73 @@ if(searchValue){
 
         /* ***** YEAR UP BUTTON ***** */ 
 
-if(yearUp){
-    /* console.log("up button works"); */
+// if(yearUp){
+//     /* console.log("up button works"); */
 
+//     yearUp.addEventListener("click", () => {
+//         console.log("up button works");
+
+//         movies.forEach((movie) => {
+//             /* output via ts in html, with variables and template literals (backticks) */
+//             const moviecardDetails = `<div>
+//             <h3>${movie[0]}</h3>
+//             <p>${movie[1]}</p> 
+//             <h4>${movie[2]}</h4>
+//             <p>${movie[3]}</p>
+//             <p>${movie[4]}</p>
+//             <h6>${movie[5]}</h6>
+//             </div>`; 
+
+//             moviecardContent.innerHTML += moviecardDetails; /* inserting data into html, += to prevent overwriting our output in html*/
+//         });
+
+//         /* a and b are the elements in the array */
+//         const sortedMoviesAsc = movies.sort((a, b) => {
+//             return a[1] - b[1];
+//         });
+//         console.log(sortedMoviesAsc);
+        
+//     });
+    
+// };
+
+
+/* trying ai suggestion, because mine didn't create seperate cards. need to go back to the original version above, to let the other buttons function properly */
+
+if(yearUp){
     yearUp.addEventListener("click", () => {
         console.log("up button works");
 
-        movies.forEach((movie) => {
-            /* output via ts in html, with variables and template literals (backticks) */
-            const moviecardDetails = `<div>
-            <h3>${movie[0]}</h3>
-            <p>${movie[1]}</p> 
-            <h4>${movie[2]}</h4>
-            <p>${movie[3]}</p>
-            <p>${movie[4]}</p>
-            <h6>${movie[5]}</h6>
-            </div>`; 
+        moviecardContent.innerHTML = ''; // Clear previous content
 
-            moviecardContent.innerHTML += moviecardDetails; /* inserting data into html, += to prevent overwriting our output in html*/
+        movies.forEach((movie) => {
+            // Create a new article element for each movie
+            const movieCard = document.createElement('article');
+            movieCard.classList.add('moviecard');
+
+            // Add the movie details to the article
+            movieCard.innerHTML = `
+                <h3>${movie[0]}</h3>
+                <p>${movie[1]}</p> 
+                <h4>${movie[2]}</h4>
+                <p>${movie[3]}</p>
+                <p>${movie[4].join(', ')}</p>
+                <h6>${movie[5]}</h6>
+            `;
+
+            // Append the new article to the moviecardContent div
+            moviecardContent.appendChild(movieCard);
         });
 
-        /* a and b are the elements in the array */
+        // Sort movies by year
         const sortedMoviesAsc = movies.sort((a, b) => {
             return a[1] - b[1];
         });
         console.log(sortedMoviesAsc);
-        
     });
-    
-};
+}
+
+
 
                  /* ***** YEAR DOWN BUTTON ***** */ 
 if(yearDown){
