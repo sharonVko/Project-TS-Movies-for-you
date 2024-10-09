@@ -21,22 +21,6 @@ Welcome to **Movies for You** – a dynamic movie database that allows users to 
 - **CSS3:** Styling for the movie cards and overall layout.
 - **TypeScript:** Logic for fetching, sorting, and displaying movie data.
 
-## Setup
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/movies-for-you.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd movies-for-you
-   ```
-
-3. Open `index.html` in your browser to view the project.
-
 ## Usage
 
 - **Search Movies:** Use the search bar to find movies by title.
